@@ -75,3 +75,13 @@ const initialBooks = [
 
 initialBooks.forEach(book => Book.addBookToLibrary(book));
 Book.displayBooks(myLibrary);
+
+const pages = document.getElementById("pages");
+pages.addEventListener("input", (event) => {
+  if (pages.validity.rangeUnderflow) {
+    pages.setCustomValidity("Come on, no book is ONE page.");
+  } else {
+    pages.setCustomValidity("");
+  }
+});
+
